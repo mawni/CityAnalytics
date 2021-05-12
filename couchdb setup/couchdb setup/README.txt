@@ -1,0 +1,1 @@
+Make sure you running all those scripts with root enviroment
