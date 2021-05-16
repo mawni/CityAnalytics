@@ -13,10 +13,13 @@ curl -X POST 'https://api.twitter.com/2/tweets/search/stream/rules' -H "Content-
 import requests
 import json
 import time
+import os
+from dotenv import load_dotenv, find_dotenv
 
 # Base URL and Credentials
+load_dotenv(find_dotenv())
+bearer_token = os.environ.get("BEARER_TOKEN")
 base_url = "https://api.twitter.com/2/tweets/search/stream"
-bearer_token = 'AAAAAAAAAAAAAAAAAAAAANalPQEAAAAATs%2B47CKMBBL6vay%2BgbPNgUxs6A8%3D8XTceKLv6a84FQG6f1ITMjuio2yteQ9ooxyo9KKhOQHXl6solx'
 
 # Create stream and add rules. TODO: replace with place:melbourne once researcher application approved
 covid_keywords_rule = {
@@ -37,8 +40,8 @@ time.sleep(3)
 
 # Send a GET request to Tweet stream
 get_headers = {"Authorization": f"Bearer {bearer_token}"}
-get_request_params = "?tweet.fields=geo"
-response = requests.get(base_url+get_request_params, headers=get_headers, stream=True)
+get_request_params = {"tweet.fields":"geo"}
+response = requests.get(base_url, params=get_request_params, headers=get_headers, stream=True)
 
 # Iterate through streamed tweets
 for line in response.iter_lines():
