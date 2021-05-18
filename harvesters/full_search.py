@@ -48,10 +48,21 @@ while next_token != '' or len(results) == 0:
         next_token = content['meta']['next_token']
         query_params['next_token'] = next_token
     
-    # Insert to list
+    # Insert data into list
+    required_fields = set(['id', 'created_at', 'text', 'geo'])
     for tweet_data in content['data']:
-        # Careful: Retweets somehow is included, they dont contain geo info
-        results.append(tweet_data)
+        # Only include tweets with 4 fields: id, text, geo, created_at
+        if set(list(tweet_data.keys())) == required_fields:
+            tweet_dict = {
+                'id': tweet_data['id'],
+                'created_at': tweet_data['created_at'],
+                'coordinates': tweet_data['geo']['coordinates']['coordinates'],
+                'text': tweet_data['text']
+            }
+            results.append(tweet_dict)
+        else:
+            # See which tweet does not contain fields
+            print(tweet_data)
 
     # Break after 20 tweets = 2 requests
     if len(results) == 20:
