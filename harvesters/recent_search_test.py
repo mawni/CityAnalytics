@@ -9,30 +9,41 @@ import json
 from datetime import datetime, timezone
 import getpass
 
+# Load credentials
+#load_dotenv(find_dotenv())
+
 # Query header
-bearer_token = getpass.getpass("Please enter your bearer token: ")#os.environ.get("BEARER_TOKEN")
+bearer_token = getpass.getpass("Please enter your bearer token: ") #os.environ.get("BEARER_TOKEN")
 get_headers = {"Authorization": f"Bearer {bearer_token}"}
 
 # Base URL
-base_url = "https://api.twitter.com/2/tweets/search/all"
+#base_url = "https://api.twitter.com/2/tweets/search/all"
+base_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Query parameters
-query = "has:geo place_country:AU lang:en" # Search Query
-start_time = datetime(2016, 1, 1, 0, 0, tzinfo=timezone.utc) # YYYY-MM-DDTHH:MM
-end_time =  datetime(2016, 12, 31, 0, 0, tzinfo=timezone.utc)
-tweet_fields = "geo,created_at" # Include coordinates and tweet time in data
-max_results = 10 # 1-100
+query = "melbourne" #has:geo # Search Query
+start_time = datetime(2021, 5, 15, 0, 0, tzinfo=timezone.utc) # YYYY-MM-DDTHH:MM
+end_time =  datetime(2021, 5, 16, 0, 0, tzinfo=timezone.utc)
+tweet_fields = "geo" # Include coordinates in response data
+max_results = 50 # 1-100
 
 query_params = {
     'query': query,
     'start_time': start_time.isoformat().split("+")[0] + "Z", # Formatting
-    'end_time': end_time.isoformat().split("+")[0] + "Z",
+    #'end_time': end_time.isoformat().split("+")[0] + "Z",
     'tweet.fields': tweet_fields, #Not sure if this is the one causing the trouble
     'max_results': max_results
 }
 
+
+"""
+Testing using 7-day search
+#TODO: Rate limiting
+#TODO: Catching errors
+"""
 results = []
 next_token = ''
+test_counter = 0
 
 while next_token != '' or len(results) == 0:
     response = requests.get(base_url, params=query_params, headers=get_headers)
@@ -48,13 +59,13 @@ while next_token != '' or len(results) == 0:
         next_token = content['meta']['next_token']
         query_params['next_token'] = next_token
     
-    # Insert to list
-    for tweet_data in content['data']:
-        # Careful: Retweets somehow is included, they dont contain geo info
-        results.append(tweet_data)
+    # Append tweet if only have geo coordinate, not needed if using academic because API will capture via search query
+    for tweet_dict in content['data']:
+        if "geo" in tweet_dict.keys():
+            results.append(tweet_dict)
 
-    # Break after 20 tweets = 2 requests
-    if len(results) == 20:
+    # Testing: break if we have 5 tweets containing coordinates
+    if len(results) == 5:
         break
 
 print(results)
