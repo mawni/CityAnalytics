@@ -1,21 +1,33 @@
 //import logo from './logo.svg';
 import './App.css';
-import React, {Component} from 'react';
-import axios from 'axios';
+import React, {Component} from 'react'; //import to make component classes
+import axios from 'axios'; //import to use axios package --> for http requests
 
 // function TestHeader(props){
 //   return <h1>{props.name}</h1>
 // }
 
-
+// This is for a button which when clicked, outputs info on a respective twitter analysis scenario
 class ScenarioButton extends Component {
-  constructor(props){
+  
+  constructor(props){ //constructor
     super(props);
     this.doRequest = this.doRequest.bind(this);
-    this.state = {
-      result: null
-    };
   }
+
+  //state variables for the class
+  state = {
+    result: null, //result of the http GET request
+    isActive: false //boolean for status of whether button is active or inactive (to hide/show info)
+  };
+
+  handleShow = () => {
+    this.setState({isActive: true});
+  }
+  handleHide = () => {
+    this.setState({isActive: false})
+  }
+
 
   doRequest(){
     //this function executes when button being clicked
@@ -27,6 +39,7 @@ class ScenarioButton extends Component {
     axios.get("https://jsonplaceholder.typicode.com/users").then(resp => {
       console.log(resp.data);
       this.setState({result:JSON.stringify(resp.data)});
+      this.handleHide();
     });
     // return (
     //   <h1>TEST</h1>
@@ -34,14 +47,24 @@ class ScenarioButton extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <button onClick={this.doRequest}>
-          {this.props.name}
-        </button>
-        <p>{this.state.result}</p>
-      </div>
-    )
+    if (this.state.isActive){
+      return (
+        <div>
+          <button onClick={this.doRequest}>
+            Hide {this.props.name}
+          </button>
+          <p style={{fontSize : "10px"}}>{this.state.result}</p>
+        </div>
+      )
+    } else /* isActive == false */ {
+      return (
+        <div>
+          <button onClick={this.handleShow}>
+            Show {this.props.name}
+          </button>
+        </div>
+      )
+    }
   }
 }
 
