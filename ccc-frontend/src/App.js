@@ -1,26 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+
 function App() {
   return (
     <div className="App">
-      {/* 
-        <nav>
-          {/* navbar at top of page
-          <div class="navbar">
-            <h1 class="nav-header">Team XXX</h1>
-            <div class="nav-links">
-              <ul>
-                {/* hrefs are IDs for the sections
-                <li><a href="#about">Data</a></li>
-                <li><a href="#experience">About</a></li>
-                <li><a href="https://github.com/mawni/CityAnalytics">GitHub</a></li>
-                <li><a href="#interest">abcd</a></li>
-              </ul>
-            </div>
+      <nav>
+        {/* navbar at top of page */}
+        <div class="navbar">
+          <h1 class="nav-header">Team 55</h1>
+          <div class="nav-links">
+            <ul>
+              {/* hrefs are IDs for the sections */}
+              {/* <li><a href="#about">Data</a></li> */}
+              {/* <li><a href="#experience">About</a></li> */}
+              <li><a href="https://github.com/mawni/CityAnalytics">GitHub</a></li>
+            </ul>
           </div>
-        </nav> 
-      */}
+        </div>
+      </nav> 
       <header className="App-header">
         
         <h1>City Twitter Analytics</h1>

@@ -59,7 +59,7 @@
 nav {
   width:100%; /* cover entire width of screen */
   position: fixed; /* keep the nav bar at the top */
-  background: black;
+  background: white;
   height: 60px;
 }
 .navbar {
@@ -83,6 +83,6 @@ nav {
   text-decoration: none;
 }
 .navbar * {
-  color:white;
+  color:black;
   font-weight:100;
 }
