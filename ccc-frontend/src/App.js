@@ -1,26 +1,40 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import React, {Component} from 'react';
+import axios from 'axios';
 
-function TestHeader(props){
-  return <h1>{props.name}</h1>
-}
+// function TestHeader(props){
+//   return <h1>{props.name}</h1>
+// }
+
 
 class ScenarioButton extends Component {
   constructor(props){
     super(props);
     this.doRequest = this.doRequest.bind(this);
   }
+
+  state = {
+    result: "lol",
+  }
+
   doRequest(){
-    alert('Hello there o7');
-    //to something upon the button being clicked
+    //this function executes when button being clicked
+    //alert('Hello there o7');
+    axios.get("https://jsonplaceholder.typicode.com/users").then(resp => {this.setState({result:resp.data})});
+    return (
+      <h1>TEST</h1>
+    )
   }
 
   render() {
     return (
-      <button onClick={this.doRequest}>
-        {this.props.name}
-      </button>
+      <div>
+        <button onClick={this.doRequest}>
+          {this.props.name}
+        </button>
+        {this.result}
+      </div>
     )
   }
 }
@@ -43,26 +57,40 @@ function App() {
           </div>
         </nav> 
         <main className="App-header">
-          
           <h1>City Twitter Analytics</h1>
+          <p>Scenario 1</p>
           <ScenarioButton name="Scenario 1"></ScenarioButton>
+          <p>Scenario 2</p>
           <ScenarioButton name="Scenario 2"></ScenarioButton>
+          <p>Scenario 3</p>
           <ScenarioButton name="Scenario 3"></ScenarioButton>
+          <p>Scenario 4</p>
           <ScenarioButton name="Scenario 4"></ScenarioButton>
+          <p>Scenario 5</p>
           <ScenarioButton name="Scenario 5"></ScenarioButton>
+          <br></br>
+
+          {/* <section id="scenarios">
+            <ScenarioButton name="Scenario 1"></ScenarioButton>
+            <ScenarioButton name="Scenario 2"></ScenarioButton>
+            <ScenarioButton name="Scenario 3"></ScenarioButton>
+            <ScenarioButton name="Scenario 4"></ScenarioButton>
+            <ScenarioButton name="Scenario 5"></ScenarioButton>
+          </section> */}
+          
           {/* https://github.com/mawni/CityAnalytics */}
-          <section id="scenarios">
+          {/* <section id="scenarios">
             <h3>Scenario 1</h3>
             <h3>Scenario 2</h3>
             <h3>Scenario 3</h3>
             <h3>Scenario 4</h3>
             <h3>Scenario 5</h3>
-          </section>
+          </section> */}
           {/* <img src={logo} className="App-logo" alt="logo"/> */}
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <TestHeader name="test lol"></TestHeader>
+          {/* <TestHeader name="test lol"></TestHeader> */}
           
           {/* <a
             className="App-link"
