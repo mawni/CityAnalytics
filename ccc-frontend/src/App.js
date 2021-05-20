@@ -12,19 +12,25 @@ class ScenarioButton extends Component {
   constructor(props){
     super(props);
     this.doRequest = this.doRequest.bind(this);
-  }
-
-  state = {
-    result: "lol",
+    this.state = {
+      result: null
+    };
   }
 
   doRequest(){
     //this function executes when button being clicked
     //alert('Hello there o7');
-    axios.get("https://jsonplaceholder.typicode.com/users").then(resp => {this.setState({result:resp.data})});
-    return (
-      <h1>TEST</h1>
-    )
+
+    //https://attacomsian.com/blog/http-requests-axios 
+    //requests with parameters. do axios.get("__url__" + this.props.queryParam), then pass in the prop at instantiation
+
+    axios.get("https://jsonplaceholder.typicode.com/users").then(resp => {
+      console.log(resp.data);
+      this.setState({result:JSON.stringify(resp.data)});
+    });
+    // return (
+    //   <h1>TEST</h1>
+    // )
   }
 
   render() {
@@ -33,7 +39,7 @@ class ScenarioButton extends Component {
         <button onClick={this.doRequest}>
           {this.props.name}
         </button>
-        {this.result}
+        <p>{this.state.result}</p>
       </div>
     )
   }
@@ -87,9 +93,9 @@ function App() {
             <h3>Scenario 5</h3>
           </section> */}
           {/* <img src={logo} className="App-logo" alt="logo"/> */}
-          <p>
+          {/* <p>
             Edit <code>src/App.js</code> and save to reload.
-          </p>
+          </p> */}
           {/* <TestHeader name="test lol"></TestHeader> */}
           
           {/* <a
