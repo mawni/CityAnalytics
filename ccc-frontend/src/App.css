@@ -14,7 +14,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: whitesmoke;
+  color: black;
+  background: url("satellite-back.jpg");
+  background-size:cover;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +39,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#scenarios {
+  display: flex;
+}
+
+#scenarios * {
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nav-header {
+  all: unset; /* remove all pre-existing CSS attributes */
+  font-size: 1.25rem;
+}
+nav {
+  width:100%; /* cover entire width of screen */
+  position: fixed; /* keep the nav bar at the top */
+  background: black;
+  height: 60px;
+}
+.navbar {
+  height: 100%; /* this means the height of the navbar div will take up 100% of space of the nav element (which encloses the navbar div */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem; /* top & bottom    left & right */
+  /* note _rem is a relative measurement (relative to default overall document font size = 16px). */
+  /* 2rem = 2*rem px */
+  align-items: center;
+}
+.nav-links {
+  width: 30%;
+}
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+.nav-links a {
+  text-decoration: none;
+}
+.navbar * {
+  color:white;
+  font-weight:100;
 }
