@@ -39,7 +39,7 @@ class ScenarioButton extends Component {
     axios.get("https://jsonplaceholder.typicode.com/users").then(resp => {
       console.log(resp.data);
       this.setState({result:JSON.stringify(resp.data)});
-      this.handleHide();
+      this.handleShow();
     });
     // return (
     //   <h1>TEST</h1>
@@ -50,7 +50,7 @@ class ScenarioButton extends Component {
     if (this.state.isActive){
       return (
         <div>
-          <button onClick={this.doRequest}>
+          <button onClick={this.handleHide}>
             Hide {this.props.name}
           </button>
           <p style={{fontSize : "10px"}}>{this.state.result}</p>
@@ -59,7 +59,7 @@ class ScenarioButton extends Component {
     } else /* isActive == false */ {
       return (
         <div>
-          <button onClick={this.handleShow}>
+          <button onClick={this.doRequest}>
             Show {this.props.name}
           </button>
         </div>
