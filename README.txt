@@ -1,0 +1,9 @@
+# need docker installed
+# with twitter_harvester.tar in current directory run command: docker load < twitter_harvester.tar
+# then run command: docker run -e NUM_tweets="120" -e IP_address="45.113.233.155" -e START_TIME="(2016,1,1,0,0)" -e END_TIME="(2017,1,1,0,0)" twitter_harvester:latest
+  NUM_tweets: total tweets stored in the database
+  IP_address: the IP address of current vm
+  START_TIME: start time
+  END_TIME: end time
+
+Link to resource: https://drive.google.com/drive/folders/1UTJhtO0jXrQ9XQirhOJPwwsnCNYxfYpy?usp=sharing
