@@ -55,20 +55,10 @@ class ScenarioButton extends Component {
           <button onClick={this.handleHide}>
             Hide {this.props.name}
           </button>
-          <p style={{fontSize : '10px'}}>{this.state.result}</p>
+          {/* <p style={{fontSize : '10px'}}>{this.state.result}</p> */}
           <br></br>
-          {/* the actual map. code block is copied from https://docs.mapbox.com/mapbox-gl-js/api/ */}
-          {/* <div id='map' style='width: 400px; height: 300px;'></div>
-          <script>
-            mapboxgl.accessToken = process.env.REACT_APP_MAPBOX1,
-            var map = new mapboxgl.Map({
-              container = 'map', // container ID
-              style = 'mapbox://styles/mapbox/streets-v11', // style URL
-              center = [-74.5, 40], // starting position [lng, lat]
-              zoom = 9 // starting zoom
-            });
-          </script> */}
-          {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.9269464077704!2d10.749395743221154!3d47.556905181403664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8a6866bd39dbba3!2sNeuschwanstein%20Castle!5e0!3m2!1sen!2sau!4v1618848815443!5m2!1sen!2sau"></iframe> */}
+          {/* this next line displays an entire MapBox component! */}
+          <Map1></Map1>
         </div>
       )
     } else /* isActive == false */ {
@@ -110,7 +100,7 @@ class Map1 extends Component {
   render(){
     return(
       <div>
-        <p>lmao</p>
+        <p>MapBox</p>
         <div ref={this.mapContainer} className="map-container" />
       </div>
     )
@@ -170,7 +160,6 @@ function App() {
 
           <section id="results" class="results-section">
             {/* section for the actual data of the project */}
-            <Map1></Map1>
             <h3>Results</h3>
             <p>Scenario 1</p>
             <ScenarioButton name="Scenario 1"></ScenarioButton>
@@ -184,29 +173,6 @@ function App() {
             <ScenarioButton name="Scenario 5"></ScenarioButton>
             <br></br>
           </section>
-          
-
-          {/* <section id="scenarios">
-            <ScenarioButton name="Scenario 1"></ScenarioButton>
-            <ScenarioButton name="Scenario 2"></ScenarioButton>
-            <ScenarioButton name="Scenario 3"></ScenarioButton>
-            <ScenarioButton name="Scenario 4"></ScenarioButton>
-            <ScenarioButton name="Scenario 5"></ScenarioButton>
-          </section> */}
-          
-          {/* https://github.com/mawni/CityAnalytics */}
-          {/* <section id="scenarios">
-            <h3>Scenario 1</h3>
-            <h3>Scenario 2</h3>
-            <h3>Scenario 3</h3>
-            <h3>Scenario 4</h3>
-            <h3>Scenario 5</h3>
-          </section> */}
-          {/* <img src={logo} className="App-logo" alt="logo"/> */}
-          {/* <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p> */}
-          {/* <TestHeader name="test lol"></TestHeader> */}
           
           {/* <a
             className="App-link"

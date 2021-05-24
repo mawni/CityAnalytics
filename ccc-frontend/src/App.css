@@ -116,5 +116,6 @@ button {
 }
 
 .map-container {
-  height: 400px;
+  height: 800px;
+  width: 90vw;
 }
