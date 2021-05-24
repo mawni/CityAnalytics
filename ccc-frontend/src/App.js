@@ -64,7 +64,7 @@ class ScenarioButton extends Component {
     } else /* isActive == false */ {
       return (
         <div>
-          <button onClick={this.doRequest}>
+          <button onClick={this.handleShow}>
             Show {this.props.name}
           </button>
         </div>
@@ -82,6 +82,7 @@ class Map1 extends Component {
       lng: 135.542630,
       lat: -27.530812,
       zoom: 3.89
+      // the current state values align with a centered view of Australia
     };
     this.mapContainer = React.createRef();
   }
@@ -99,8 +100,8 @@ class Map1 extends Component {
 
   render(){
     return(
-      <div>
-        <p>MapBox</p>
+      <div class="map-box-wrapper">
+        <p>MapBox - Please zoom in to view the Statistical Area Level 2 (SA2) Regions</p>
         <div ref={this.mapContainer} className="map-container" />
       </div>
     )
@@ -134,9 +135,9 @@ function App() {
             <img src="/twitter.png" alt=""></img>
             <h1>COMP90024 Project 2 - Twitter Analytics</h1>
             <br></br>
-            <h3>Introduction</h3>
+            <h3>Welcome!</h3>
             <br></br>
-            <p>abcd some text about welcome to our project</p>
+            <p>~~~</p>
           </section>
 
           <section id="team" class="team-section">
@@ -165,13 +166,13 @@ function App() {
             {/* section for the actual data of the project */}
             <h3>Results</h3>
             <br></br>
-            <p>Scenario 1</p>
+            <p>Scenario 1 - Number of tweets in each SA2</p>
             <ScenarioButton name="Scenario 1"></ScenarioButton>
-            <p>Scenario 2</p>
+            <p>Scenario 2 - Emotion scores based on the content of tweets in each SA2</p>
             <ScenarioButton name="Scenario 2"></ScenarioButton>
-            <p>Scenario 3</p>
+            <p>Scenario 3 - Correlation between crime-related tweets and crime-related SA2 statistics</p>
             <ScenarioButton name="Scenario 3"></ScenarioButton>
-            <p>Scenario 4</p>
+            <p>Scenario 4 - Average number of tweets per person in each SA2 region.</p>
             <ScenarioButton name="Scenario 4"></ScenarioButton>
             <br></br>
           </section>
