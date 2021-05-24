@@ -1,7 +1,11 @@
 //import logo from './logo.svg';
 import './App.css';
-import React, {Component} from 'react'; //import to make component classes
+import React, {Component, useState, useRef, useEffect} from 'react'; //import to make component classes
 import axios from 'axios'; //import to use axios package --> for http requests
+
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import 'mapbox-gl/dist/mapbox-gl.css'; //mapbox
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX1;
 
 // function TestHeader(props){
 //   return <h1>{props.name}</h1>
@@ -51,9 +55,20 @@ class ScenarioButton extends Component {
           <button onClick={this.handleHide}>
             Hide {this.props.name}
           </button>
-          <p style={{fontSize : "10px"}}>{this.state.result}</p>
+          <p style={{fontSize : '10px'}}>{this.state.result}</p>
           <br></br>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.9269464077704!2d10.749395743221154!3d47.556905181403664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8a6866bd39dbba3!2sNeuschwanstein%20Castle!5e0!3m2!1sen!2sau!4v1618848815443!5m2!1sen!2sau"></iframe>
+          {/* the actual map. code block is copied from https://docs.mapbox.com/mapbox-gl-js/api/ */}
+          {/* <div id='map' style='width: 400px; height: 300px;'></div>
+          <script>
+            mapboxgl.accessToken = process.env.REACT_APP_MAPBOX1,
+            var map = new mapboxgl.Map({
+              container = 'map', // container ID
+              style = 'mapbox://styles/mapbox/streets-v11', // style URL
+              center = [-74.5, 40], // starting position [lng, lat]
+              zoom = 9 // starting zoom
+            });
+          </script> */}
+          {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.9269464077704!2d10.749395743221154!3d47.556905181403664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8a6866bd39dbba3!2sNeuschwanstein%20Castle!5e0!3m2!1sen!2sau!4v1618848815443!5m2!1sen!2sau"></iframe> */}
         </div>
       )
     } else /* isActive == false */ {
@@ -65,6 +80,40 @@ class ScenarioButton extends Component {
         </div>
       )
     }
+  }
+}
+
+class Map1 extends Component {
+
+  constructor(props){
+    //sets up the maps default state
+    super(props);
+    this.state = {
+      lng: 135.542630,
+      lat: -27.530812,
+      zoom: 3.89
+    };
+    this.mapContainer = React.createRef();
+  }
+
+  componentDidMount() {
+    const { lng, lat, zoom } = this.state;
+    const map = new mapboxgl.Map({
+    container: this.mapContainer.current,
+    style: 'mapbox://styles/mawni/ckp1cfea12pjg17pcze2jproe',
+    // mapbox://styles/mapbox/streets-v11
+    center: [lng, lat],
+    zoom: zoom
+    });
+  }
+
+  render(){
+    return(
+      <div>
+        <p>lmao</p>
+        <div ref={this.mapContainer} className="map-container" />
+      </div>
+    )
   }
 }
 
@@ -101,20 +150,27 @@ function App() {
 
           <section id="team" class="team-section">
             {/* section for some info about the team */}
-            <h3>Team Members</h3>
+            <h3>Team 55</h3>
+            <br></br>
             <div class="team-list-wrapper">
               <ul>
-                <li>Jin</li>
-                <li>Cheng Wang</li>
-                <li>Yingrui</li>
-                <li>Jacky</li>
-                <li>Mustafa Awni</li>
+                <h4>Jin</h4>
+                <p>___@student.unimelb.edu.au</p>
+                <h4>Cheng Wang</h4>
+                <p>___@student.unimelb.edu.au</p>
+                <h4>Yingrui</h4>
+                <p>___@student.unimelb.edu.au</p>
+                <h4>Jacky</h4>
+                <p>___@student.unimelb.edu.au</p>
+                <h4>Mustafa Awni</h4>
+                <p>mawni@student.unimelb.edu.au</p>
               </ul>
             </div>
           </section>
 
           <section id="results" class="results-section">
             {/* section for the actual data of the project */}
+            <Map1></Map1>
             <h3>Results</h3>
             <p>Scenario 1</p>
             <ScenarioButton name="Scenario 1"></ScenarioButton>

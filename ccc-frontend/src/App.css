@@ -105,6 +105,16 @@ button {
   background-color: white;
 }
 
-.team-list-wrapper {
-  font-size: 20px;
+.team-list-wrapper ul p {
+  /* only applies to <ul> and <p> */
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.team-list-wrapper h4 {
+  /* only applies to <h4> tags within class="team-list-wrapper" */
+  font-size: 23px;
+}
+
+.map-container {
+  height: 400px;
 }
