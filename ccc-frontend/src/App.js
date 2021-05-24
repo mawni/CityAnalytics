@@ -2,10 +2,12 @@
 import './App.css';
 import React, {Component, useState, useRef, useEffect} from 'react'; //import to make component classes
 import axios from 'axios'; //import to use axios package --> for http requests
-
+import twitterlogo from './twitter.png';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import 'mapbox-gl/dist/mapbox-gl.css'; //mapbox
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX1;
+
+
 
 // function TestHeader(props){
 //   return <h1>{props.name}</h1>
@@ -132,7 +134,7 @@ function App() {
         <main className="App-main">
           <section id="home" class="home-section">
             {/* landing page of website */}
-            <img src="/twitter.png" alt=""></img>
+            <img src={twitterlogo} alt=""></img>
             <h1>COMP90024 Project 2 - Twitter Analytics</h1>
             <br></br>
             <h3>Welcome!</h3>
