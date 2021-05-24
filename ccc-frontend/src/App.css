@@ -5,8 +5,8 @@
 
 * {
   /* everything here is applied to all elements as a default */
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  font-family:Arial, Helvetica, sans-serif;
+  color:midnightblue;
   margin: 0;
   padding: 0;
   /* made all the padding and margin 0, to allow for custom design */
@@ -109,7 +109,7 @@ button {
   box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
   width: 180px;
   height: 50px;
-  border-color: rgb(255, 255, 255);
+  border-color:lightsteelblue;
   border-width: 1px;
   border-style: solid;
   color: cornflowerblue !important;
@@ -124,11 +124,12 @@ button {
 .team-list-wrapper ul p {
   /* only applies to <ul> and <p> */
   font-size: 19px;
-  margin-bottom: 20px;
+  ;
 }
 .team-list-wrapper h4 {
   /* only applies to <h4> tags within class="team-list-wrapper" */
   font-size: 23px;
+  margin-top: 20px
 }
 
 .map-container {

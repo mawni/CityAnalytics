@@ -144,12 +144,13 @@ function App() {
             <br></br>
             <div class="team-list-wrapper">
               <ul>
-                <h4>Jin</h4>
-                <p>___@student.unimelb.edu.au</p>
+                <h4>Jin Kai Teh</h4>
+                <p>jteh3@student.unimelb.edu.au</p>
+                <p><a href="https://github.com/kaikai43">GitHub</a></p>
                 <h4>Cheng Wang</h4>
                 <p>___@student.unimelb.edu.au</p>
                 <h4>Yingrui</h4>
-                <p>___@student.unimelb.edu.au</p>
+                <p>yingruiz@student.unimelb.edu.au</p>
                 <h4>Jacky</h4>
                 <p>___@student.unimelb.edu.au</p>
                 <h4>Mustafa Awni</h4>
