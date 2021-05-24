@@ -1,5 +1,16 @@
 .App {
+  /* this is entire webpage basically */
   text-align: center;
+}
+
+* {
+  /* everything here is applied to all elements as a default */
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin: 0;
+  padding: 0;
+  /* made all the padding and margin 0, to allow for custom design */
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -8,24 +19,29 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  /* to do with the react logo (atom icon) */
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.App-main {
   background: whitesmoke;
   color: black;
-  background: url("satellite-back.jpg");
+  background: url("scott-webb-unsplash.jpg");
   background-size:cover;
-  /* background-color: #282c34; */
+  background-repeat: repeat-y;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(10px + 1.5vmin);
+}
+
+section {
+  height: 100vh; /* each section occupies entireity of window */
+  width:100%;
+  display: flex; /* flexible container */
+  flex-direction: column; /* lay out content in column format */
+  justify-content: center; /* center on y-axis */
+  align-items: center; /* center on x-axis */
 }
 
 .App-link {
@@ -85,4 +101,22 @@ nav {
 .navbar * {
   color:black;
   font-weight:100;
+}
+button {
+  background-color: white;
+}
+
+.team-list-wrapper ul p {
+  /* only applies to <ul> and <p> */
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.team-list-wrapper h4 {
+  /* only applies to <h4> tags within class="team-list-wrapper" */
+  font-size: 23px;
+}
+
+.map-container {
+  height: 800px;
+  width: 90vw;
 }
