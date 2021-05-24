@@ -1,0 +1,85 @@
+---
+# Create instance(s) on MRC
+- name: Create slave 1 instance
+  os_server:
+    name: '{{ instance0 }}'
+    image: '{{ instance_image }}'
+    key_name: '{{instance_key_name}}'
+    flavor: '{{instance_flavor}}'
+    availability_zone: '{{availability_zone}}'
+    network: '{{instance_network}}'
+    security_groups: '{{sg_names}}'
+    volumes: '{{ volumes0 }}'
+    auto_floating_ip: yes
+    wait: yes
+    timeout: 600
+    state: present
+  register: os_instance_slave1
+
+- name: Create slave 2 instance
+  os_server:
+    name: '{{ instance1 }}'
+    image: '{{ instance_image }}'
+    key_name: '{{instance_key_name}}'
+    flavor: '{{instance_flavor}}'
+    availability_zone: '{{availability_zone}}'
+    network: '{{instance_network}}'
+    security_groups: '{{sg_names}}'
+    volumes: '{{ volumes1 }}'
+    auto_floating_ip: yes
+    wait: yes
+    timeout: 600
+    state: present
+  register: os_instance_slave2
+
+- name: Create master instance
+  os_server:
+    name: '{{ instance2 }}'
+    image: '{{ instance_image }}'
+    key_name: '{{instance_key_name}}'
+    flavor: '{{instance_flavor}}'
+    availability_zone: '{{availability_zone}}'
+    network: '{{instance_network}}'
+    security_groups: '{{sg_names}}'
+    volumes: '{{ volumes2 }}'
+    auto_floating_ip: yes
+    wait: yes
+    timeout: 600
+    state: present
+  register: os_instance_master
+
+- debug:
+    msg: "Instance {{ os_instance_master.openstack.name }} has been created. IP address {{ os_instance_master.openstack.public_v4 }}."
+  when: os_instance_master.openstack is defined
+
+- debug:
+    msg: "Instance {{ os_instance_slave1.openstack.name }} has been created. IP address {{ os_instance_slave1.openstack.public_v4 }}."
+  when: os_instance_slave1.openstack is defined
+  
+- debug:
+    msg: "Instance {{ os_instance_slave2.openstack.name }} has been created. IP address {{ os_instance_slave2.openstack.public_v4 }}."
+  when: os_instance_slave2.openstack is defined
+
+- name: Wait for connection
+  wait_for:
+    host: "{{ os_instance_master.openstack.public_v4 }}"
+    port: 22
+    timeout: 120
+    search_regex: OpenSSH
+  when: os_instance_master.openstack is defined
+
+- name: Wait for connection
+  wait_for:
+    host: "{{ os_instance_slave1.openstack.public_v4 }}"
+    port: 22
+    timeout: 120
+    search_regex: OpenSSH
+  when: os_instance_slave1.openstack is defined
+
+- name: Wait for connection
+  wait_for:
+    host: "{{ os_instance_slave2.openstack.public_v4 }}"
+    port: 22
+    timeout: 120
+    search_regex: OpenSSH
+  when: os_instance_slave2.openstack is defined

@@ -1,0 +1,33 @@
+- hosts: all_servers
+  remote_user: ubuntu
+  gather_facts: true
+  roles:
+    - role: servers-harvester
+
+- hosts: slavenode1
+  remote_user: ubuntu
+  gather_facts: true
+  tasks:
+    - name: run slave1 node twitter harvester
+      become: yes
+      shell: |
+        docker run -d -e NUM_tweets="1400000" -e IP_address={{slavenode1}} -e START_TIME="(2016,1,1,0,0)" -e END_TIME="(2016,4,1,0,0)" chengw4/twitter_harvester
+
+- hosts: slavenode2
+  remote_user: ubuntu
+  gather_facts: true
+  tasks:
+    - name: run slave2 node twitter harvester
+      become: yes
+      shell: |
+        docker run -d -e NUM_tweets="1400000" -e IP_address={{slavenode2}} -e START_TIME="(2016,4,1,0,0)" -e END_TIME="(2016,8,1,0,0)" chengw4/twitter_harvester
+
+- hosts: masternode
+  remote_user: ubuntu
+  gather_facts: true
+  tasks:
+    - name: run master node node twitter harvester
+      become: yes
+      shell: |
+        docker run -d -e NUM_tweets="1400000" -e IP_address={{masternode}} -e START_TIME="(2016,8,1,0,0)" -e END_TIME="(2017,1,1,0,0)" chengw4/twitter_harvester
+

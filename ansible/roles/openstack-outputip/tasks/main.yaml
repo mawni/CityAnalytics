@@ -1,0 +1,33 @@
+---
+# output ip addresses to inneed files
+- name: output the IP to inventory file
+  vars:
+    master_ip: "{{ os_instance_master.openstack.public_v4 }}" 
+    slave1_ip: "{{ os_instance_slave1.openstack.public_v4 }}" 
+    slave2_ip: "{{ os_instance_slave2.openstack.public_v4 }}" 
+  template:
+    src: inventory.ini.j2
+    dest: ./inventory/inventory.ini
+
+- name: output the IP to the master node bash script
+  vars:
+    master_ip: "{{ os_instance_master.openstack.public_v4 }}" 
+    slave1_ip: "{{ os_instance_slave1.openstack.public_v4 }}" 
+    slave2_ip: "{{ os_instance_slave2.openstack.public_v4 }}" 
+  template:
+    src: masternode.sh.j2
+    dest: ./roles/servers-couchdb-master/tasks/masternode.sh
+
+- name: output the IP to the slave node 1 bash script
+  vars:
+    instance_ip: "{{ os_instance_slave1.openstack.public_v4 }}" 
+  template:
+    src: slavenode.sh.j2
+    dest: ./roles/servers-couchdb-slave1/tasks/slavenode1.sh
+
+- name: output the IP to the slave node 2 bash script
+  vars:
+    instance_ip: "{{ os_instance_slave2.openstack.public_v4 }}" 
+  template:
+    src: slavenode.sh.j2
+    dest: ./roles/servers-couchdb-slave2/tasks/slavenode2.sh

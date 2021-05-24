@@ -1,0 +1,68 @@
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: v_slave1
+    vol_size: 120
+  - vol_name: v_slave2
+    vol_size: 120
+  - vol_name: v_master
+    vol_size: 120
+
+# Security group
+security_groups:
+  - name: ssh
+    description: "Security group for SSH access"
+    rules:
+      - protocol: tcp
+        port_range_min: 22
+        port_range_max: 22
+        remote_ip_prefix: 0.0.0.0/0
+  - name: http
+    description: "Security groups for HTTP"
+    rules:
+      - protocol: tcp
+        port_range_min: 80
+        port_range_max: 80
+        remote_ip_prefix: 0.0.0.0/0
+      - protocol: tcp
+        port_range_min: 443
+        port_range_max: 443
+        remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb cluster
+    description: "Security groups for couchdb"
+    rules:
+      - protocol: tcp
+        port_range_min: 5984
+        port_range_max: 5984
+        remote_ip_prefix: 0.0.0.0/0
+      - protocol: tcp
+        port_range_min: 4369
+        port_range_max: 4369
+        remote_ip_prefix: 0.0.0.0/0
+      - protocol: tcp
+        port_range_min: 9100
+        port_range_max: 9100
+        remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+instance0: slave-1
+volumes0: ['v_slave1']
+instance1: slave-2
+volumes1: ['v_slave2']
+instance2: master
+volumes2: ['v_master']
+# instances:
+#   - name: slave-1
+#     volumes: ['v_slave1']
+#   - name: slave-2
+#     volumes: ['v_slave2']
+#   - name: master
+#     volumes: ['v_master']
+
+
+instance_image: f8b79936-6616-4a22-b55d-0d0a1d27bceb
+instance_key_name: test_key
+instance_flavor: uom.mse.2c9g
+instance_network: qh2-uom

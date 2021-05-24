@@ -1,0 +1,19 @@
+---
+- name: Docker log in
+  docker_login:
+    username: chengw4
+    password: zxcvbnm0328
+
+- name: Pull an Image from Dockerhub
+  docker_image:
+    name: chengw4/twitter_harvester
+    source: pull
+
+- name: Log out of Dockerhub
+  docker_login:
+    state: absent
+
+
+- name: Create twitter Couchdb database
+  become: yes
+  shell: curl -XPUT http://admin:admin@{{masternode}}:5984/tweet_data

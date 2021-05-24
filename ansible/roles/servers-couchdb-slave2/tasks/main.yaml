@@ -1,0 +1,12 @@
+---
+# upload the script and set the remote host to a slave node2
+- name: upload the slavenode script
+  become: yes
+  copy:
+    src: ./slavenode2.sh
+    dest: /home/ubuntu/
+    mode: 0777
+
+- name: execute the slavenode script
+  become: yes
+  shell: /home/ubuntu/slavenode2.sh

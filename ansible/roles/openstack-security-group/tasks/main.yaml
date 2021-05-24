@@ -1,0 +1,23 @@
+---
+#  Create security groups
+- name: Create security groups
+  os_security_group:
+    name: '{{ item.name }}'
+    description: '{{ item.description }}'
+    state: present
+  loop: '{{ security_groups }}'
+
+- name: Create a list of security group names
+  set_fact:
+    sg_names: '{{ sg_names|default([]) + [ item.name ] }}'
+  loop: '{{ security_groups }}'
+
+- debug:
+    msg: "Security group(s) {{ sg_names }} have been created."
+
+# Create security group rules
+- include_tasks: onegroup.yaml
+  loop: '{{ security_groups }}'
+  loop_control:
+    loop_var: security_group_item
+
