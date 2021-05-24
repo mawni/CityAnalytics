@@ -44,6 +44,17 @@ section {
   align-items: center; /* center on x-axis */
 }
 
+.results-section {
+  justify-content: flex-start;
+  /* items are packed from the beginning of the flex container, so that when mapboxes are expanded, 
+     items are only pushed down, and not up which makes sections overlap 
+  */
+}
+
+.results-section h3 {
+  margin-top: 10vh;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -134,7 +145,7 @@ button {
 }
 
 .map-container {
-  height: 800px;
+  height: 90vh;
   width: 90vw;
 }
 
