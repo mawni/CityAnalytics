@@ -131,6 +131,7 @@ function App() {
         <main className="App-main">
           <section id="home" class="home-section">
             {/* landing page of website */}
+            <img src="/twitter.png" alt=""></img>
             <h1>COMP90024 Project 2 - Twitter Analytics</h1>
             <br></br>
             <h3>Introduction</h3>
@@ -155,6 +156,7 @@ function App() {
                 <p>___@student.unimelb.edu.au</p>
                 <h4>Mustafa Awni</h4>
                 <p>mawni@student.unimelb.edu.au</p>
+                <p><a href="https://github.com/mawni">GitHub</a></p>
               </ul>
             </div>
           </section>
@@ -162,6 +164,7 @@ function App() {
           <section id="results" class="results-section">
             {/* section for the actual data of the project */}
             <h3>Results</h3>
+            <br></br>
             <p>Scenario 1</p>
             <ScenarioButton name="Scenario 1"></ScenarioButton>
             <p>Scenario 2</p>
