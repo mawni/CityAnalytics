@@ -5,8 +5,8 @@
 
 * {
   /* everything here is applied to all elements as a default */
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  font-family:Arial, Helvetica, sans-serif;
+  color:midnightblue;
   margin: 0;
   padding: 0;
   /* made all the padding and margin 0, to allow for custom design */
@@ -104,19 +104,20 @@ nav {
   font-weight:100;
   font-size: 20px;
 }
+
 button {
   background-color: white;
   box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
   width: 180px;
   height: 50px;
-  border-color: rgb(255, 255, 255);
+  border-color:lightsteelblue;
   border-width: 1px;
   border-style: solid;
   color: cornflowerblue !important;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 20px;
   font-weight:500;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   cursor: pointer;
 }
 
@@ -124,14 +125,30 @@ button {
 .team-list-wrapper ul p {
   /* only applies to <ul> and <p> */
   font-size: 19px;
-  margin-bottom: 20px;
+  ;
 }
 .team-list-wrapper h4 {
   /* only applies to <h4> tags within class="team-list-wrapper" */
   font-size: 23px;
+  margin-top: 20px
 }
 
 .map-container {
   height: 800px;
   width: 90vw;
+}
+
+.home-section h1 {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-section img {
+  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+}
+
+.map-box-wrapper p {
+  font-size: 15px;
 }
