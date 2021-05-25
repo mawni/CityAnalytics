@@ -1,3 +1,14 @@
+==========================
+Team Member   | Student ID
+==========================
+Yingrui Zhang |     825593
+Jinyu Yang    |     980619
+Cheng Wang    |     825299
+Jin Kai Teh   |     938613
+Mustafa Awni  |     763078
+
+
+
 # need docker installed
 # with twitter_harvester.tar in current directory run command: docker load < twitter_harvester.tar
 # then run command: docker run -e NUM_tweets="120" -e IP_address="45.113.233.155" -e START_TIME="(2016,1,1,0,0)" -e END_TIME="(2017,1,1,0,0)" twitter_harvester:latest
