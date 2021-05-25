@@ -3,3 +3,5 @@
 ansible-playbook -i ./inventory/inventory.ini -u ubuntu --key-file=./test_key.pem instance_couchdb.yaml
 
 ansible-playbook -i ./inventory/inventory.ini -u ubuntu --key-file=./test_key.pem instance_twitter_harvester.yaml
+
+ansible-playbook -i ./inventory/inventory.ini -u ubuntu --key-file=./test_key.pem instance_web_service.yaml

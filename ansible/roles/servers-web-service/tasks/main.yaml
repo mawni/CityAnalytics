@@ -1,0 +1,19 @@
+---
+- name: Docker log in
+  docker_login:
+    username: chengw4
+    password: zxcvbnm0328
+
+- name: Pull a web Image from Dockerhub
+  docker_image:
+    name: chengw4/ccc_web_service
+    source: pull
+
+- name: Log out of Dockerhub
+  docker_login:
+    state: absent
+
+
+- name: Create the web service on master node
+  become: yes
+  shell: docker run -d -p 80:80 chengw4/ccc_web_service
