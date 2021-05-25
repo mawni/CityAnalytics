@@ -1,3 +1,41 @@
+# Visualisation of Twitter Data Project
+
+## Overview
+
+A simple webapp that includes the use of Mapbox API to display statistical data. Built with [React](https://reactjs.org/) and [Mapbox](https://www.mapbox.com/).
+
+## Functionalities
+
+- Compress Image By Reducing Resolution and Size
+- Offline Compression
+
+## Built With
+
+- ReactJS
+- Mapbox API
+
+## Development
+
+1. Clone the repository and change directory.
+
+```
+git clone https://github.com/mawni/CityAnalytics.git
+cd CityAnalytics/ccc-frontend
+```
+
+2. Install npm dependencies
+
+```
+npm install
+```
+
+3. Run the app locally.
+
+```
+npm start
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
