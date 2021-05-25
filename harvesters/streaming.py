@@ -1,4 +1,14 @@
 """
+CCC2021-Team55  
+
+Team Member   | Student ID  
+--------------------------
+Yingrui Zhang |     825593  
+Jinyu Yang    |     980619  
+Cheng Wang    |     825299  
+Jin Kai Teh   |     938613  
+Mustafa Awni  |     763078  
+
 References: 
 https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/quick-start
 https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/integrate/build-a-rule
