@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/nivo-lightbox.css">
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+    
 
   </head>
   
@@ -42,10 +44,7 @@
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#home">Home</a>
               </li> 
-                                       
-              <li class="nav-item">
-                <a class="nav-link page-scroll" href="#showcase">Showcase</a>
-              </li>           
+                                               
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#team">Team</a>
               </li> 
@@ -58,11 +57,14 @@
         <div class="row space-100">
           <div class="col-lg-12 col-md-12 col-xs-12">
             <div class="contents text-center">
-              <h2 class="head-title">City Analysis<br>For COMP90024 Project 2</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab <br>dolores ea fugiat nesciunt quisquam.</p>
+              <h2 class="head-title">City Analytics<br>For COMP90024 Project 2</h2>
+              <p><br></p>
               <div class="header-button text-center">
-                <a href="#showcase" class="btn btn-border-filled">Show Graphs</a>
-                <a href="#" class="btn btn-border page-scroll">Show Maps</a>
+                <a href="#Scenario1" class="btn btn-border-filled page-scroll">Scenario 1</a>
+                <a href="#scenario_2" class="btn btn-border-filled page-scroll">Scenario 2</a>
+                <a href="#Scenario3" class="btn btn-border-filled page-scroll">Scenario 3</a>
+                <a href="#Scenario4" class="btn btn-border-filled page-scroll">Scenario 4</a>
+                <a href="#map" class="btn btn-border-filled page-scroll">Scenario 5</a>
               </div>
             </div>
           </div>
@@ -73,430 +75,111 @@
     <!-- Header Section End --> 
 
 
+    
+    
+    <!-- Scenario1 section Start -->
+    <section id="Scenario1" class="section">
+      <div class="container">
+        <!-- Start Row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="head-title">Scenario 1<br>Income versus tweet per person in that region in some SA2 areas in Victoria</h2>
+            <div id='columnchart_material'></div>
+          </div>
+
+        </div>
+        <!-- End Row -->
+
+      </div>
+    </section>
+
+
+    <!-- Scenario2 section Start -->
+    <section id="scenario_2" class="section">
+      <div class="container">
+        <!-- Start Row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="head-title">Scenario 2<br>Top 10 happiness score SA2 regions versus tweet per person in that region in Victoria</h2>
+            <div id="scenario2"></div>
+          </div>
+
+        </div>
+        <!-- End Row -->
+
+      </div>
+    </section>
+
+
+    <!-- Scenario3 section Start -->
+    <section id="Scenario3" class="section">
+      <div class="container">
+        <!-- Start Row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="head-title">Scenario 3<br>Education level of versus tweet per person in some SA2 region</h2>
+            <div id="line_chart" style="width: 900px; height: 500px"></div>
+          </div>
+
+        </div>
+        <!-- End Row -->
+
+      </div>
+    </section>
+
+
+
+    <!-- Scenario4 section Start -->
+    <section id="Scenario4" class="section">
+      <div class="container">
+        <!-- Start Row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="head-title">Scenario 4<br>Happiness score calculated based on tweets vs based on aurin offical data</h2>
+            <div id="scenario_4">
+              <img src="img/s4.jpg" alt="Scenario4" style="width: 900px; height: 600px;">
+            </div>
+          </div>
+
+        </div>
+        <!-- End Row -->
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Scenario4 section Start -->
+    <section id="Scenario4" class="section">
+      <div class="container">
+        <!-- Start Row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="head-title">Scenario 5<br>Regional happiness score based on SA2 regions in Victroia</h2>
+            <div id=""></div>
+          </div>
+
+        </div>
+        <!-- End Row -->
+
+  </div>
+</section>
+    <!-- map Section Start here --> 
+    <section id ="map" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- map Section End here --> 
 
 
     
-
-
-    <!-- Recent Showcase Section Start -->
-    <section id="showcase">
-      <div class="container-fluid right-position">
-        <!-- Start Row -->
-        <div class="row gradient-bg">
-          <div class="col-lg-12">
-            <div class="showcase-text section-header text-center">  
-              <div>   
-                <h2 class="section-title">Recent Works</h2>
-                <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
-                </div>
-              </div> 
-            </div>
-          </div>
-
-        </div>
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row justify-content-center showcase-area">
-          <div class="col-lg-12 col-md-12 col-xs-12 pr-0">
-            <div class="showcase-slider owl-carousel">
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/01.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/02.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/02.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/03.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/03.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/04.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/04.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/05.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/05.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/01.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/02.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/02.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/03.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/03.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/04.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/04.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/05.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/05.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/01.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/02.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/03.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/04.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/05.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/01.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/02.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/03.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/04.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="img/showcase/05.jpg" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="img/showcase/01.jpg"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             
-
-              
-            </div>
-          </div>
-        </div>
-        <!-- End Row -->
-      </div>
-    </section>
-    <!-- Recent Showcase Section End --> 
-
-     
 
 
     <!-- Team section Start -->
@@ -509,8 +192,8 @@
               <div>   
                 <h2 class="section-title">Team 55 Members</h2>
                 <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
+                  <p>Yingrui Zhang, Cheng Wang, Jinyu Yang, Mustafa Awni, Jin Kai Teh</p>  
+                  <p>cloud computing and cluster , project 2</p>
                 </div>
               </div> 
             </div>
@@ -577,6 +260,207 @@
     <script src="js/nivo-lightbox.js"></script>     
     <script src="js/jquery.magnific-popup.min.js"></script>      
     <script src="js/main.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    
+    <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+      .mapboxgl-popup {
+      max-width: 400px;
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      }
+      </style>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlbmd3NCIsImEiOiJja2VsMHNjZHMwMnF2MnJ1ZzRmYm9pNTllIn0.QgB_1pyToG5UDNvN6B3NOQ';
+      var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+        mapboxClient.geocoding
+        .forwardGeocode({
+          query: 'Melbourne, Australia',
+          autocomplete: false,
+          limit: 1
+        })
+        .send()
+        .then(function (response) {
+        if (
+          response &&
+          response.body &&
+          response.body.features &&
+          response.body.features.length
+        ) {
+        var feature = response.body.features[0];
+        
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/chengw4/ckp45p42r122817jx4ang1wzq',
+          center: [144.955, -37.814],
+          zoom: 12
+        });
+        
+
+    
+          // Create a marker and add it to the map.
+          
+          }
+          });
+
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.load('current', {'packages':['line']});
+      google.charts.load('current', {'packages':['corechart']});
+
+      function drawChart() {
+
+
+        // scenario1
+        var data = google.visualization.arrayToDataTable([
+          ['Region', 'No. of tweets per person', 'Medium Weekly Salary'],
+          ['West Melbourne', 157, 0],
+          ['Port Melbourne', 41, 1625],
+          ['Melbourne Airport', 30, 919],
+          ['Flemington', 2, 1062],
+          ['Wilsons Promontory', 19, 1375],
+          ['Braeside', 5, 900],
+          ['East Melbourne', 2, 1341],
+          ['Melbourne', 2, 434],
+          ['Alps - West', 2, 624],
+          ['Kensington', 1, 1012]
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Medium Weekly Salary, No. of tweets per person: 2016-2017',
+          },
+          series:{
+            0: { axis: 'No. of tweets per person' },
+            1: { axis: 'Medium Weekly Salary' }
+          },
+          
+        };
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+
+
+        // scenario2
+        var data_s2 = google.visualization.arrayToDataTable([
+          ['Region', 'happiness score', 'No. of tweets per person'],
+          ['Melbourne', 69034, 2.18],
+          ['Southbank', 18292, 0.952],
+          ['East Melbourne', 13846, 2.73],
+          ['St Kilda', 8291, 0.34],
+          ['Fitzroy', 7732, 0.73],
+          ['Richmond', 7131, 0.229],
+          ['Carlton', 6516, 0.355],
+          ['Prahran', 6421, 0.297],
+          ['South Yarra', 5952, 0.256],
+          ['Albert Park', 5385, 0.266]
+        ]);
+
+        var options_s2 = {
+          chart: {
+            title: '',
+            subtitle: 'Happiness score based on Project1, No. of tweets per person: 2016-2017',
+            
+          },
+          bars: 'horizontal' ,
+          series:{
+            0: { axis: 'happiness_score' },
+            1: { axis: 'No_tweets' }
+          },
+          axes: {
+            x: {
+              happiness_score: {label: 'Happiness score based on project 1 sentiment algorithm'}, // Bottom x-axis.
+              No_tweets: {side: 'top', label: 'No. of tweets per person'} // Top x-axis.
+            }
+          }
+          
+        };
+        var chart_s2 = new google.charts.Bar(document.getElementById('scenario2'));
+        chart_s2.draw(data_s2, google.charts.Bar.convertOptions(options_s2));
+
+
+
+        // scenario3
+        var data_s3 = google.visualization.arrayToDataTable([
+          ['num of tweets', 'education level'],
+          [0, 4.83],
+          [0.00486, 5.48],
+          [0.00608, 5.05],
+          [0.0071, 4.14],
+          [0.00899, 3.96],
+          [0.0107, 5.09],
+          [0.013, 3.60],
+          [0.0164, 4.71],
+          [0.019, 4.34],
+          [0.069, 4.68],
+          [0.081, 5.25],
+          [0.111, 3.7],
+          [0.136, 5.39],
+          [0.154, 5.44],
+          [0.167, 4.54],
+          [0.1899, 3.37],
+          [0.2298, 3.34],
+          [0.256, 4.35],
+          [0.260, 5.13],
+          [0.271, 4.25],
+          [0.378, 4.26],
+          [0.397, 3.74]
+    
+          
+        ]);
+
+        var options_s3 = {
+          title: '',
+          hAxis: {title: 'Number of tweets per person in a SA2 region'},
+          vAxis: {title: 'Education level'},
+        };
+
+        var chart_s3 = new google.visualization.ScatterChart(document.getElementById('line_chart'));
+
+        chart_s3.draw(data_s3, options_s3);
+      }
+    </script>
+
+    <!-- scenario 4 -->
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Opening Move', 'Percentage'],
+          ["King's pawn (e4)", 44],
+          ["Queen's pawn (d4)", 31],
+          ["Knight to King 3 (Nf3)", 12],
+          ["Queen's bishop pawn (c4)", 10],
+          ['Other', 3]
+        ]);
+
+        var options = {
+          title: 'Chess opening moves',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Chess opening moves',
+                   subtitle: 'popularity by percentage' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Percentage'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
     
   </body>
 </html>
